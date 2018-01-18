@@ -1,0 +1,17 @@
+{
+  "generator-ngx-rocket": {
+    "version": "3.1.1",
+    "props": {
+      "target": [
+        "web"
+      ],
+      "pwa": true,
+      "ui": "bootstrap",
+      "auth": true,
+      "appName": "punk-ipa-front-app",
+      "projectName": "punk-ipa-front-app",
+      "packageManager": "npm",
+      "mobile": []
+    }
+  }
+}
