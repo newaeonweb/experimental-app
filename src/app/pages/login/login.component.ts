@@ -6,7 +6,7 @@ import { finalize } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { Logger } from '../../settings/logger.service';
 import { I18nService } from '../../settings/i18n.service';
-import { AuthenticationService } from '../../settings/authentication/authentication.service';
+import { AuthService } from '../../settings/auth/authentication.service';
 
 const log = new Logger('Login');
 
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router,
               private formBuilder: FormBuilder,
               private i18nService: I18nService,
-              private authenticationService: AuthenticationService) {
+              private authenticationService: AuthService) {
     this.createForm();
   }
 

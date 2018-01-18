@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthenticationService } from '../../authentication/authentication.service';
+import { AuthService } from '../../auth/authentication.service';
 import { I18nService } from '../../i18n.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   menuHidden = true;
 
   constructor(private router: Router,
-              private authenticationService: AuthenticationService,
+              private authenticationService: AuthService,
               private i18nService: I18nService) { }
 
   ngOnInit() { }

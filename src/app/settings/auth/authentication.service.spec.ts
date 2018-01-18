@@ -1,21 +1,21 @@
 import { TestBed, inject, fakeAsync, tick } from '@angular/core/testing';
 
-import { AuthenticationService, Credentials} from './authentication.service';
+import { AuthService, Credentials} from './authentication.service';
 
 const credentialsKey = 'credentials';
 
-describe('AuthenticationService', () => {
-  let authenticationService: AuthenticationService;
+describe('AuthService', () => {
+  let authenticationService: AuthService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AuthenticationService]
+      providers: [AuthService]
     });
   });
 
   beforeEach(inject([
-    AuthenticationService
-  ], (_authenticationService: AuthenticationService) => {
+    AuthService
+  ], (_authenticationService: AuthService) => {
     authenticationService = _authenticationService;
   }));
 
@@ -92,7 +92,7 @@ describe('AuthenticationService', () => {
   });
 
   describe('logout', () => {
-    it('should clear user authentication', fakeAsync(() => {
+    it('should clear user auth', fakeAsync(() => {
       // Arrange
       const loginRequest = authenticationService.login({
         username: 'toto',
@@ -116,7 +116,7 @@ describe('AuthenticationService', () => {
       });
     }));
 
-    it('should clear persisted user authentication', fakeAsync(() => {
+    it('should clear persisted user auth', fakeAsync(() => {
       // Arrange
       const loginRequest = authenticationService.login({
         username: 'toto',
