@@ -8,7 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LayoutComponent } from '../layout/layout.component';
 import { HeaderComponent } from '../layout/header/header.component';
 import { RouteReusableStrategy } from './route-reusable-strategy';
-import { AuthService } from '../shared/services/authentication.service';
+import { AuthService } from '../shared/services/auth.service';
 import { AuthenticationGuard } from '../shared/services/authentication.guard';
 import { I18nService } from './i18n.service';
 import { HttpService } from './http/http.service';

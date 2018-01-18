@@ -1,6 +1,6 @@
 import { TestBed, inject, fakeAsync, tick } from '@angular/core/testing';
 
-import { AuthService, Credentials} from './authentication.service';
+import { AuthService, Credentials} from './auth.service';
 
 const credentialsKey = 'credentials';
 
