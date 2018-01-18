@@ -1,8 +1,8 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { AuthService } from './auth/authentication.service';
-import { MockAuthenticationService } from './auth/authentication.service.mock';
-import { AuthenticationGuard } from './auth/authentication.guard';
+import { AuthService } from '../shared/services/authentication.service';
+import { MockAuthenticationService } from '../shared/services/authentication.service.mock';
+import { AuthenticationGuard } from '../shared/services/authentication.guard';
 import { LayoutComponent } from '../layout/layout.component';
 import { Route } from './route.service';
 

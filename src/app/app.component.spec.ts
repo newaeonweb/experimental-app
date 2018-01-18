@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
-import { CoreModule } from './settings/core.module';
+import { CoreModule } from './settings/settings.module';
 
 describe('AppComponent', () => {
   beforeEach(() => {

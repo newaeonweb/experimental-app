@@ -6,7 +6,7 @@ import { finalize } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { Logger } from '../../settings/logger.service';
 import { I18nService } from '../../settings/i18n.service';
-import { AuthService } from '../../settings/auth/authentication.service';
+import { AuthService } from '../../shared/services/authentication.service';
 
 const log = new Logger('Login');
 
