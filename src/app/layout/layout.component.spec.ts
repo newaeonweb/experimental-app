@@ -2,8 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { AuthService } from '../shared/services/auth.service';
-import { MockAuthenticationService } from '../shared/services/auth.service.mock';
+import { AuthService } from '../shared/services/auth/auth.service';
+import { MockAuthenticationService } from '../shared/services/auth/auth.service.mock';
 import { LayoutComponent } from './layout.component';
 import { CoreModule } from '../settings/settings.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';

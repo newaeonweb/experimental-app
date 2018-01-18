@@ -4,9 +4,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { finalize } from 'rxjs/operators';
 
 import { environment } from '../../../environments/environment';
-import { Logger } from '../../shared/services/logger.service';
+import { Logger } from '../../shared/services/logger/logger.service';
 import { I18nService } from '../../settings/i18n.service';
-import { AuthService } from '../../shared/services/auth.service';
+import { AuthService } from '../../shared/services/auth/auth.service';
 
 const log = new Logger('Login');
 

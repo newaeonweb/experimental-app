@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ResponseOptions } from '@angular/http';
 import { each } from 'lodash';
 
-import { Logger } from '../../shared/services/logger.service';
+import { Logger } from '../../shared/services/logger/logger.service';
 
 const log = new Logger('HttpCacheService');
 const cachePersistenceKey = 'httpCache';

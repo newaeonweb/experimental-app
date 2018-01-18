@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { LayoutComponent } from '../layout/layout.component';
-import { AuthGuard } from '../shared/services/auth.guard';
+import { AuthGuard } from '../shared/services/guard/auth.guard';
 
 /**
  * Provides helper methods to create routes.

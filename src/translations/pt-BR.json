@@ -1,0 +1,16 @@
+{
+  "APP_NAME": "punk-ipa-front-app",
+  "About": "Sobre",
+  "Hello world !": "Olá Mundo !",
+  "Home": "Início",
+  "Logged in as": "Logado como",
+  "Login": "Entrar",
+  "Logout": "Sair",
+  "Password": "Senha",
+  "Password is required": "Senha é obrigatório",
+  "Username": "Nome de usuário",
+  "Username is required": "Nome é obrigatório",
+  "Username or password incorrect.": "Nome ou senha incorreto",
+  "Remember me": "lembrar-me",
+  "Version": "Versão"
+}

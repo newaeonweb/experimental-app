@@ -3,8 +3,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { AuthService } from '../../shared/services/auth.service';
-import { MockAuthenticationService } from '../../shared/services/auth.service.mock';
+import { AuthService } from '../../shared/services/auth/auth.service';
+import { MockAuthenticationService } from '../../shared/services/auth/auth.service.mock';
 import { I18nService } from '../../settings/i18n.service';
 import { HeaderComponent } from './header.component';
 

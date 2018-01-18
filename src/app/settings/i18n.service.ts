@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { includes } from 'lodash';
 
-import { Logger } from '../shared/services/logger.service';
+import { Logger } from '../shared/services/logger/logger.service';
 import * as enUS from '../../translations/en-US.json';
 import * as frFR from '../../translations/fr-FR.json';
+import * as ptBR from '../../translations/pt-BR.json';
 
 const log = new Logger('I18nService');
 const languageKey = 'language';
@@ -29,6 +30,7 @@ export class I18nService {
     // Embed languages to avoid extra HTTP requests
     translateService.setTranslation('en-US', enUS);
     translateService.setTranslation('fr-FR', frFR);
+    translateService.setTranslation('pt-BR', ptBR);
   }
 
   /**
