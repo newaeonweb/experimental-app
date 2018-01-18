@@ -9,7 +9,7 @@ import { LayoutComponent } from '../layout/layout.component';
 import { HeaderComponent } from '../layout/header/header.component';
 import { RouteReusableStrategy } from './route-reusable-strategy';
 import { AuthService } from '../shared/services/auth.service';
-import { AuthenticationGuard } from '../shared/services/authentication.guard';
+import { AuthGuard } from '../shared/services/auth.guard';
 import { I18nService } from './i18n.service';
 import { HttpService } from './http/http.service';
 import { HttpCacheService } from './http/http-cache.service';
@@ -34,7 +34,7 @@ export function createHttpService(backend: ConnectionBackend,
   ],
   providers: [
     AuthService,
-    AuthenticationGuard,
+    AuthGuard,
     I18nService,
     HttpCacheService,
     {

@@ -4,10 +4,10 @@ import { Router, CanActivate } from '@angular/router';
 import { Logger } from '../../settings/logger.service';
 import { AuthService } from './auth.service';
 
-const log = new Logger('AuthenticationGuard');
+const log = new Logger('AuthGuard');
 
 @Injectable()
-export class AuthenticationGuard implements CanActivate {
+export class AuthGuard implements CanActivate {
 
   constructor(private router: Router,
               private authenticationService: AuthService) { }

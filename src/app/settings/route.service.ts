@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { LayoutComponent } from '../layout/layout.component';
-import { AuthenticationGuard } from '../shared/services/authentication.guard';
+import { AuthGuard } from '../shared/services/auth.guard';
 
 /**
  * Provides helper methods to create routes.
@@ -18,7 +18,7 @@ export class Route {
       path: '',
       component: LayoutComponent,
       children: routes,
-      canActivate: [AuthenticationGuard],
+      canActivate: [AuthGuard],
       // Reuse LayoutComponent instance when navigating between child views
       data: { reuse: true }
 }];
