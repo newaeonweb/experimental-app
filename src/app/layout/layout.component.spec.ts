@@ -2,15 +2,15 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { AuthService } from '../auth/authentication.service';
-import { MockAuthenticationService } from '../auth/authentication.service.mock';
-import { ShellComponent } from './shell.component';
-import { CoreModule } from '../core.module';
+import { AuthService } from '../settings/auth/authentication.service';
+import { MockAuthenticationService } from '../settings/auth/authentication.service.mock';
+import { LayoutComponent } from './layout.component';
+import { CoreModule } from '../settings/core.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-describe('ShellComponent', () => {
-  let component: ShellComponent;
-  let fixture: ComponentFixture<ShellComponent>;
+describe('LayoutComponent', () => {
+  let component: LayoutComponent;
+  let fixture: ComponentFixture<LayoutComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -28,7 +28,7 @@ describe('ShellComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShellComponent);
+    fixture = TestBed.createComponent(LayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

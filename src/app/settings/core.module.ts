@@ -5,8 +5,8 @@ import { HttpModule, Http, XHRBackend, ConnectionBackend, RequestOptions } from 
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { ShellComponent } from './shell/shell.component';
-import { HeaderComponent } from './shell/header/header.component';
+import { LayoutComponent } from '../layout/layout.component';
+import { HeaderComponent } from '../layout/header/header.component';
 import { RouteReusableStrategy } from './route-reusable-strategy';
 import { AuthService } from './auth/authentication.service';
 import { AuthenticationGuard } from './auth/authentication.guard';
@@ -30,7 +30,7 @@ export function createHttpService(backend: ConnectionBackend,
   ],
   declarations: [
     HeaderComponent,
-    ShellComponent
+    LayoutComponent
   ],
   providers: [
     AuthService,

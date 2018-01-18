@@ -3,7 +3,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { AuthService } from './auth/authentication.service';
 import { MockAuthenticationService } from './auth/authentication.service.mock';
 import { AuthenticationGuard } from './auth/authentication.guard';
-import { ShellComponent } from './shell/shell.component';
+import { LayoutComponent } from '../layout/layout.component';
 import { Route } from './route.service';
 
 describe('Route', () => {
@@ -24,7 +24,7 @@ describe('Route', () => {
   }));
 
   describe('withShell', () => {
-    it('should create routes as children of shell', () => {
+    it('should create routes as children of layout', () => {
       // Prepare
       const testRoutes = [{ path: 'test' }];
 
@@ -35,7 +35,7 @@ describe('Route', () => {
       expect(routes.length).toBe(1);
       expect(routes[0].path).toBe('');
       expect(routes[0].children).toBe(testRoutes);
-      expect(routes[0].component).toBe(ShellComponent);
+      expect(routes[0].component).toBe(LayoutComponent);
     });
   });
 });
