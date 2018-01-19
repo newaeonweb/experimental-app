@@ -20,7 +20,7 @@ export class Route {
       children: routes,
       canActivate: [AuthGuard],
       // Reuse LayoutComponent instance when navigating between child views
-      data: { reuse: true }
+      data: { reuse: true },
 }];
   }
 

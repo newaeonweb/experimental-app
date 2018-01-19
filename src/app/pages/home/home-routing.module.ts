@@ -6,8 +6,8 @@ import { extract } from '../../settings/i18n.service';
 import { HomeComponent } from './home.component';
 
 const routes: Routes = Route.withShell([
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent, data: { title: extract('Home') } }
+  { path: '', redirectTo: '/home', pathMatch: 'full', },
+  { path: 'home', component: HomeComponent, data: { title: extract('Home') }, }
 ]);
 
 @NgModule({
