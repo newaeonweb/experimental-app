@@ -5,7 +5,7 @@ import { AuthService, Credentials} from './auth.service';
 const credentialsKey = 'credentials';
 
 describe('AuthService', () => {
-  let authenticationService: AuthService;
+  let authService: AuthService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -15,8 +15,8 @@ describe('AuthService', () => {
 
   beforeEach(inject([
     AuthService
-  ], (_authenticationService: AuthService) => {
-    authenticationService = _authenticationService;
+  ], (_authService: AuthService) => {
+    authService = _authService;
   }));
 
   afterEach(() => {
@@ -28,7 +28,7 @@ describe('AuthService', () => {
   describe('login', () => {
     it('should return credentials', fakeAsync(() => {
       // Act
-      const request = authenticationService.login({
+      const request = authService.login({
         username: 'toto',
         password: '123'
       });
@@ -42,10 +42,10 @@ describe('AuthService', () => {
     }));
 
     it('should authenticate user', fakeAsync(() => {
-      expect(authenticationService.isAuthenticated()).toBe(false);
+      expect(authService.isAuthenticated()).toBe(false);
 
       // Act
-      const request = authenticationService.login({
+      const request = authService.login({
         username: 'toto',
         password: '123'
       });
@@ -53,17 +53,17 @@ describe('AuthService', () => {
 
       // Assert
       request.subscribe(() => {
-        expect(authenticationService.isAuthenticated()).toBe(true);
-        expect(authenticationService.credentials).toBeDefined();
-        expect(authenticationService.credentials).not.toBeNull();
-        expect((<Credentials>authenticationService.credentials).token).toBeDefined();
-        expect((<Credentials>authenticationService.credentials).token).not.toBeNull();
+        expect(authService.isAuthenticated()).toBe(true);
+        expect(authService.credentials).toBeDefined();
+        expect(authService.credentials).not.toBeNull();
+        expect((<Credentials>authService.credentials).token).toBeDefined();
+        expect((<Credentials>authService.credentials).token).not.toBeNull();
       });
     }));
 
     it('should persist credentials for the session', fakeAsync(() => {
       // Act
-      const request = authenticationService.login({
+      const request = authService.login({
         username: 'toto',
         password: '123'
       });
@@ -77,7 +77,7 @@ describe('AuthService', () => {
 
     it('should persist credentials across sessions', fakeAsync(() => {
       // Act
-      const request = authenticationService.login({
+      const request = authService.login({
         username: 'toto',
         password: '123',
         remember: true
@@ -94,7 +94,7 @@ describe('AuthService', () => {
   describe('logout', () => {
     it('should clear user auth', fakeAsync(() => {
       // Arrange
-      const loginRequest = authenticationService.login({
+      const loginRequest = authService.login({
         username: 'toto',
         password: '123'
       });
@@ -102,14 +102,14 @@ describe('AuthService', () => {
 
       // Assert
       loginRequest.subscribe(() => {
-        expect(authenticationService.isAuthenticated()).toBe(true);
+        expect(authService.isAuthenticated()).toBe(true);
 
-        const request = authenticationService.logout();
+        const request = authService.logout();
         tick();
 
         request.subscribe(() => {
-          expect(authenticationService.isAuthenticated()).toBe(false);
-          expect(authenticationService.credentials).toBeNull();
+          expect(authService.isAuthenticated()).toBe(false);
+          expect(authService.credentials).toBeNull();
           expect(sessionStorage.getItem(credentialsKey)).toBeNull();
           expect(localStorage.getItem(credentialsKey)).toBeNull();
         });
@@ -118,7 +118,7 @@ describe('AuthService', () => {
 
     it('should clear persisted user auth', fakeAsync(() => {
       // Arrange
-      const loginRequest = authenticationService.login({
+      const loginRequest = authService.login({
         username: 'toto',
         password: '123',
         remember: true
@@ -127,14 +127,14 @@ describe('AuthService', () => {
 
       // Assert
       loginRequest.subscribe(() => {
-        expect(authenticationService.isAuthenticated()).toBe(true);
+        expect(authService.isAuthenticated()).toBe(true);
 
-        const request = authenticationService.logout();
+        const request = authService.logout();
         tick();
 
         request.subscribe(() => {
-          expect(authenticationService.isAuthenticated()).toBe(false);
-          expect(authenticationService.credentials).toBeNull();
+          expect(authService.isAuthenticated()).toBe(false);
+          expect(authService.credentials).toBeNull();
           expect(sessionStorage.getItem(credentialsKey)).toBeNull();
           expect(localStorage.getItem(credentialsKey)).toBeNull();
         });

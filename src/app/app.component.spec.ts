@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
-import { CoreModule } from './settings/settings.module';
+import { SettingsModule } from './settings/settings.module';
 
 describe('AppComponent', () => {
   beforeEach(() => {
@@ -11,7 +11,7 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         TranslateModule.forRoot(),
-        CoreModule
+        SettingsModule
       ],
       declarations: [AppComponent],
       providers: []

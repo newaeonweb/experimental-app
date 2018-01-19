@@ -3,9 +3,9 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { AuthService } from '../shared/services/auth/auth.service';
-import { MockAuthenticationService } from '../shared/services/auth/auth.service.mock';
+import { MockauthService } from '../shared/services/auth/auth.service.mock';
 import { LayoutComponent } from './layout.component';
-import { CoreModule } from '../settings/settings.module';
+import { SettingsModule } from '../settings/settings.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 describe('LayoutComponent', () => {
@@ -18,10 +18,10 @@ describe('LayoutComponent', () => {
         RouterTestingModule,
         TranslateModule.forRoot(),
         NgbModule.forRoot(),
-        CoreModule
+        SettingsModule
       ],
       providers: [
-        { provide: AuthService, useClass: MockAuthenticationService }
+        { provide: AuthService, useClass: MockauthService }
       ]
     })
     .compileComponents();

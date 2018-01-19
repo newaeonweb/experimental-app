@@ -10,7 +10,7 @@ import { HeaderComponent } from '../layout/header/header.component';
 import { RouteReusableStrategy } from './route-reusable-strategy';
 import { AuthService } from '../shared/services/auth/auth.service';
 import { AuthGuard } from '../shared/services/guard/auth.guard';
-import { I18nService } from './i18n.service';
+import { I18nService } from '../shared/services/i18n/i18n.service';
 import { HttpService } from './http/http.service';
 import { HttpCacheService } from './http/http-cache.service';
 
@@ -48,9 +48,9 @@ export function createHttpService(backend: ConnectionBackend,
     }
   ]
 })
-export class CoreModule {
+export class SettingsModule {
 
-  constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
+  constructor(@Optional() @SkipSelf() parentModule: SettingsModule) {
     // Import guard
     if (parentModule) {
       throw new Error(`${parentModule} has already been loaded. Import Core module in the AppModule only.`);

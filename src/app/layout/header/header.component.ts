@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthService } from '../../shared/services/auth/auth.service';
-import { I18nService } from '../../settings/i18n.service';
+import { I18nService } from '../../shared/services/i18n/i18n.service';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   menuHidden = true;
 
   constructor(private router: Router,
-              private authenticationService: AuthService,
+              private authService: AuthService,
               private i18nService: I18nService) { }
 
   ngOnInit() { }
@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    this.authenticationService.logout()
+    this.authService.logout()
       .subscribe(() => this.router.navigate(['/login'], { replaceUrl: true }));
   }
 
@@ -41,7 +41,7 @@ export class HeaderComponent implements OnInit {
   }
 
   get username(): string | null {
-    const credentials = this.authenticationService.credentials;
+    const credentials = this.authService.credentials;
     return credentials ? credentials.username : null;
   }
 

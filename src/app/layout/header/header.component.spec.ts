@@ -4,8 +4,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { AuthService } from '../../shared/services/auth/auth.service';
-import { MockAuthenticationService } from '../../shared/services/auth/auth.service.mock';
-import { I18nService } from '../../settings/i18n.service';
+import { MockauthService } from '../../shared/services/auth/auth.service.mock';
+import { I18nService } from '../../shared/services/i18n/i18n.service';
 import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
@@ -21,7 +21,7 @@ describe('HeaderComponent', () => {
       ],
       declarations: [HeaderComponent],
       providers: [
-        { provide: AuthService, useClass: MockAuthenticationService },
+        { provide: AuthService, useClass: MockauthService },
         I18nService
       ]
     })

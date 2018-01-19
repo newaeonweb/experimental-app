@@ -5,7 +5,7 @@ import { finalize } from 'rxjs/operators';
 
 import { environment } from '../../../environments/environment';
 import { Logger } from '../../shared/services/logger/logger.service';
-import { I18nService } from '../../settings/i18n.service';
+import { I18nService } from '../../shared/services/i18n/i18n.service';
 import { AuthService } from '../../shared/services/auth/auth.service';
 
 const log = new Logger('Login');
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router,
               private formBuilder: FormBuilder,
               private i18nService: I18nService,
-              private authenticationService: AuthService) {
+              private authService: AuthService) {
     this.createForm();
   }
 
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.isLoading = true;
-    this.authenticationService.login(this.loginForm.value)
+    this.authService.login(this.loginForm.value)
       .pipe(finalize(() => {
         this.loginForm.markAsPristine();
         this.isLoading = false;
