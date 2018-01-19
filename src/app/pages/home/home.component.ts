@@ -17,9 +17,26 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.isLoading = true;
+
+    // this.quoteService.getRandomQuote({category: 'dev'}).subscribe(
+    //   response => this.handleResponse(response),
+    //   error => this.handleError(error)
+    // );
+
     this.quoteService.getRandomQuote({ category: 'dev' })
       .pipe(finalize(() => { this.isLoading = false; }))
-      .subscribe((quote: string) => { this.quote = quote; });
+      .subscribe(
+        response => this.handleResponse(response),
+       error => this.handleError(error));
+  }
+
+  protected handleResponse (response: any) {
+    console.log(response);
+    this.quote = response;
+  }
+
+  protected handleError (error: any) {
+    console.log(error);
   }
 
 }
